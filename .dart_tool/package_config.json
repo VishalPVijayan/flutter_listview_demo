@@ -173,10 +173,10 @@
       "name": "flutterdemo",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.13"
     }
   ],
-  "generated": "2022-08-07T03:27:01.364860Z",
+  "generated": "2022-08-07T09:51:14.247315Z",
   "generator": "pub",
   "generatorVersion": "2.18.0-165.1.beta"
 }
