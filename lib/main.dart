@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/screens/splashscreen.dart';
+import 'package:flutterdemo/screens/pre_login/splashscreen.dart';
 
 void main() {
   runApp(MyApp());
