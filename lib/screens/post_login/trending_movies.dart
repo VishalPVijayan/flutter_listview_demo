@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import '../routing_screens/details.dart';
 
 class Treading_Movies extends StatelessWidget {
   final List trending;
@@ -25,6 +28,44 @@ class Treading_Movies extends StatelessWidget {
                   itemCount: trending.length,
                   itemBuilder: (context, index) {
                     return InkWell(
+                      onTap: () {
+
+                        if(trending[index]['title'] != null){
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Movie_Details(
+                                    name: trending[index]['title'],
+                                    bannerurl:
+                                    'https://image.tmdb.org/t/p/w500' +
+                                        trending[index]['backdrop_path'],
+                                    posterurl:
+                                    'https://image.tmdb.org/t/p/w500' +
+                                        trending[index]['poster_path'],
+                                    description: trending[index]['overview'],
+                                    vote: trending[index]['vote_average']
+                                        .toString(),
+                                    launch_on: trending[index]
+                                    ['release_date'],
+                                  )));
+
+                        }else{
+
+                          Fluttertoast.showToast(
+                              msg: "Details Not Found.",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.CENTER,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.red,
+                              textColor: Colors.white,
+                              fontSize: 16.0
+                          );
+
+                        }
+
+
+                      },
                       child: Container(
                         width: 140,
                         child: Column(

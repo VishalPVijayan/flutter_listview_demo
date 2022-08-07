@@ -78,13 +78,13 @@ class _MainPageState extends State<MainPage> {
             Tele_shows(tv: tv),
             Treading_Movies(trending: trendingmovies,),
             Top_Movies(toprated: topratedmovies,),
+            Treading_Movies(trending: trendingmovies,),
             ElevatedButton(
               child: Text(StringConstants.logout),
               style: ElevatedButton.styleFrom(
                 primary: Colors.black,
               ),
               onPressed: () {
-
 
                   Navigator.pushReplacement<void, void>(
                     context,

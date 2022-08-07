@@ -13,4 +13,5 @@ class AppColors{
   static final purple = Color(0xFF8244CC);
   static final yellow = Color(0xFFf4B700);
   static const suffixIconColor = Color(0xFFC7C9D9);
+  static const red = Color(0xFFE00909);
 }
