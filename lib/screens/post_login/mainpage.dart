@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/screens/post_login/top_movies.dart';
+import 'package:flutterdemo/screens/post_login/trending_movies.dart';
 import 'package:flutterdemo/screens/post_login/tv_shows.dart';
+import 'package:flutterdemo/screens/pre_login/loginscreen.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+
+import '../../utilities/string_constants.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -71,8 +76,35 @@ class _MainPageState extends State<MainPage> {
         body: ListView(
           children: [
             Tele_shows(tv: tv),
-            Top_Movies(
-              toprated: topratedmovies,
+            Treading_Movies(trending: trendingmovies,),
+            Top_Movies(toprated: topratedmovies,),
+            ElevatedButton(
+              child: Text(StringConstants.logout),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+              ),
+              onPressed: () {
+
+
+                  Navigator.pushReplacement<void, void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => Login(),
+                    ),
+                  );
+
+                  Fluttertoast.showToast(
+                      msg: "Logged Out",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.green,
+                      textColor: Colors.white,
+                      fontSize: 16.0
+                  );
+
+
+              },
             ),
           ],
         ));
