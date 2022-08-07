@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdemo/screens/post_login/mainpage.dart';
 import 'package:flutterdemo/utilities/colors.dart';
 import 'package:flutterdemo/utilities/string_constants.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -12,6 +13,7 @@ class Login extends StatelessWidget {
       title: StringConstants.app_name,
       home: Scaffold(
         appBar: AppBar(title: const Text(StringConstants.app_name),backgroundColor: AppColors.blackColor),
+
         body: const LoginScreen(),
       ),
     );
@@ -118,6 +120,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   print(nameController.text);
                   print(passwordController.text);
+
+                  Navigator.pushReplacement<void, void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => MainPage(),
+                    ),
+                  );
 
                   Fluttertoast.showToast(
                       msg: "Navigate",
