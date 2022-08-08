@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
 
                   Fluttertoast.showToast(
-                      msg: "Navigate",
+                      msg: "Welcome",
                       toastLength: Toast.LENGTH_SHORT,
                       gravity: ToastGravity.BOTTOM,
                       timeInSecForIosWeb: 1,
